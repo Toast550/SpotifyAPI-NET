@@ -110,3 +110,6 @@ UpgradeLog*.XML
 # NuGet
 /packages/
 *.nupkg
+
+#Visual Studio Config Directory
+.vs/*
