@@ -16,14 +16,17 @@
 		}
 	</script>
 </head>
-<body>
-    <div> 
-		<h1>Spotify Web Controler</h1>
-		<p>This page controles my spotify client</p>
-		<p><span style="color:dimgrey;"><em>Uses JonnyCrazy's Spotify API</em></span></p>
-		<br />
-		<p>Current Track: @ViewBag.song</p>
-		<input type="button" value="Skip" onclick="location.href='@Url.Action("Skip", "Home")'" />
+<body style="margin:0;background-color:black">
+    <div style="color:white;font-family:sans-serif;"> 
+		<div style="background-color:#1ED760; padding:20px; width:100%;"><h1 style="margin:0;">Spotify Web Controller</h1></div>
+		<div style="margin:8px;">
+			<p>This page controles my spotify client</p>
+			<p><span style="color:dimgrey;"><em>Uses JonnyCrazy's Spotify API</em></span></p>
+			<br />
+			<p>Current Track: @ViewBag.song</p>
+			<progress value="@ViewBag.progress" max="100"></progress><br />
+			<input type="button" value="Skip" onclick="location.href='@Url.Action("Skip", "Home")'" />
+		</div>
     </div>
 </body>
 </html>
