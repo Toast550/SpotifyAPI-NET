@@ -29,10 +29,10 @@ namespace WebInterface.Controllers
             return View();
         }
 
-        public ActionResult Skip()
+        public void Skip()
         {
             MvcApplication._spotify.Skip();
-            return View("Index");
+            Response.Redirect("/");
         }
     }
 }
