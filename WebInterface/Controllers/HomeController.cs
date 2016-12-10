@@ -31,6 +31,8 @@ namespace WebInterface.Controllers
                 else
                 {
                     ViewBag.song = _currentTrack.TrackResource.Name + ", " + _currentTrack.ArtistResource.Name;
+                    // This line below defines the time for the js timer on the page. Adding 1000ms is a slight ofset to allow for the program to catchup and compensate for shorter than actual song lengths.
+                    ViewBag.trackTime = (_currentTrack.Length * 1000) + 1000;
                 }
             }
             return View();
