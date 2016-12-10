@@ -24,7 +24,14 @@ namespace WebInterface.Controllers
             {
                 StatusResponse status = MvcApplication._spotify.GetStatus();
                 _currentTrack = status.Track;
-                ViewBag.song = _currentTrack.TrackResource.Name;
+                if (_currentTrack.IsAd())
+                {
+                    ViewBag.song = "Ad";
+                }
+                else
+                {
+                    ViewBag.song = _currentTrack.TrackResource.Name + ", " + _currentTrack.ArtistResource.Name;
+                }
             }
             return View();
         }
